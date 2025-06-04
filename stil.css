@@ -1,0 +1,388 @@
+/* Splošne nastavitve */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+ul li {
+    margin-bottom: 8px;
+    line-height: 1.6 /*razmak pri naštevanju*/
+}
+
+a {
+  color: inherit;
+  font-weight: bold;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+
+h2 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+  font-size: 28px;
+  color: #34495e;
+  padding-left: 12px;
+  margin-bottom: 18px;
+  border-left: 8px solid #42D0FF;   /* barvna črta ob levi strani */
+}
+
+h2 a {
+  text-decoration: none;    /*odstrani podrčtavanje pri povezavah na h2*/
+  color: inherit;           /*povezava prevzame barvo naslova*/
+}
+
+h4 {
+    font-size: 18px;
+    font-weight: bolder;
+    color: #34495e;
+    padding-left: 12px;
+    margin-bottom: 18px;
+    border-left: 3px solid #42D0FF
+}
+
+h6 {
+  font-size: 12px;
+  text-align: right;
+  color: #5d5d5d;
+}
+
+/* _______ Header _______ */
+nav {
+    background-color: #2A2A2A;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 40px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {   /*kaj se zgodi ko gremo z miško na besedilo*/
+    color: #42D0FF;
+    font-weight: bold;
+}
+
+
+/* __________ DROPDOWN MENI __________ */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Prikaži dropdown vsebino, ko ima fokus znotraj (tipkovnica) */
+.dropdown:focus-within .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content {
+    opacity: 0;     /* privzeto nevidno */
+    visibility: hidden;
+    position: absolute;
+    background-color: #333333;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    width: max-content;
+    z-index: 1;         /* da bo nad ostalimi elementi */
+    text-align: center;
+    top: 100%;
+    margin-top: 20px;
+    transition: opacity 0.3s ease, visibility 0.3s ease;       /* centrirano glede na .dropdown */
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 5px;
+}
+
+/* Dropdown povezave */
+.dropdown-content a {
+    color: white;
+    padding: 10px 5px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    white-space: nowrap;    /* prepreči prelom besed */
+}
+
+/* Doda navidezno "območje" pod dropdownom, da se ne zapre takoj pri odhodu z miško */
+.dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20px; /* navidezno območje */
+}
+
+/*Prikaži dropdown na hover*/ 
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* _________ Footer ________ */
+footer {
+    background-color: #AEAEAE;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.content {
+max-width: 1000px;      /* največja širina vsebine (za večje zaslone) */
+margin: 0 auto;         /* centriraj v oknu */
+padding: 0 20px;        /* odmik levo/desno */  
+}
+
+figure {
+  margin: 40px auto 32px auto;
+  max-width: 640px;
+  text-align: center;
+  background-color: #f9f9f9;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px #0000001a;
+}
+
+figure img {
+  max-width: 100%;        /* Slika se prilagodi širini */
+  height: auto;
+  border-radius: 4px;
+}
+
+figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 12px;
+  line-height: 20px;
+}
+
+[id] {
+  scroll-margin-top: 20px;    /* ko "skoči" na id naredi vmes 20px prostora */
+}
+
+.image-wrap {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  max-width: fit-content;
+  text-align: center;
+}
+
+.image-wrap img {
+  display: block;
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.image-wrap figcaption {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  text-align: left;
+  max-width: 300px;
+  text-align: center;
+}
+
+.image-wrap #analiticni-stroj-slika {     /* dodatek za analitični stroj */
+  max-width: 400px;
+  height: auto;
+}
+
+#analiticni_s-napis {
+  max-width: 400px;
+  text-align: center;
+}
+
+/* _____ TABELA _____ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;                    /* Tabela naj zavzame celotno širino nadrejenega elementa */
+  border-collapse: collapse;      /* Združi robove celic (odstrani podvojene robove med celicami) */
+  margin: 20px 0;
+  font-size: 16px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Glava tabele */
+table thead {
+  background-color: #989898;
+}
+
+table thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+  color: #000000;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Telo tabele */
+table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #000000;
+}
+
+/* Alternativno obarvanje vrstic za boljšo berljivost */
+table tbody tr:nth-child(even) {
+  background-color: #ececec;
+}
+
+/* ----- HOME PAGE -----*/
+
+.home-box {
+  display: flex;
+  flex-wrap: wrap;        /* Omogoči prelom elementov v naslednjo vrstico, če ni dovolj prostora */
+  align-items: center;    /* Navpično centriranje elementov v osi */
+  padding: 40px;
+  gap: 40px;
+  background-color: #ffffff;
+}
+
+.home-box-reverse {           /* Obrne vrstni red elementov — slika bo na desni, besedilo na levi */
+  flex-direction: row-reverse;
+}
+
+.home-img, .home-text {
+  flex: 1;              /* Vsak element zavzame enako razpoložljivo širino */
+  min-width: 250px;
+}
+
+.home-img img {
+  width: 100%;
+  max-height: 300px;
+  height: auto;
+  object-fit: contain;      /* Ohranitev razmerja slike brez popačenja */
+}
+
+.home-text h2 {
+  color: #34495e;
+  margin-top: 0;
+  text-decoration: none;
+}
+
+.home-text p {
+  line-height: 1.6;
+}
+
+
+/* Skrij checkbox */
+.toggle-container input[type="checkbox"] {
+  display: none;
+}
+
+/* Skrij dodatno besedilo privzeto */
+.home-img .dodatno-besedilo {
+  display: none;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #5f5f5f;
+  text-align: center;
+}
+
+/* Prikaži licenco, ko je checkbox označen */
+.toggle-container input[type="checkbox"]:checked ~ .home-img .dodatno-besedilo {
+  display: block;
+}
+
+/* _____ NASLOVNO BESEDILO _____ */
+.uvodno-besedilo h1, .uvodno-besedilo p {
+  margin: 0;
+}
+.uvodno-besedilo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;     /* navpično centriranje */
+  align-items: center;         /* vodoravno centriranje */
+  height: 150px;               /* fiksna višina */
+  background: linear-gradient(60deg, #34495e, #42D0FF);  /*mešanje barv */
+  box-shadow: 0 6px 18px rgba(255, 255, 255, 0.08);
+  margin: 40px 0;
+  text-align: center;
+  gap: 12px;
+}
+
+.uvodno-besedilo p {
+  font-size: 16px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.uvodno-besedilo h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: white;
+}
+
+/* _____ licenca se prikaže ko gremo z miško na logo _____ */
+.logo-container {
+  height: 120px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.logo-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Besedilo skrito na začetku */
+.logo-text {
+  font-size: 10px;
+  color: #333;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+  margin-top: -8px;
+  text-align: center;
+}
+
+/* Hover efekt */
+.logo-container:hover .logo {
+  transform: translateY(-5px) scale(0.9);
+}
+
+.logo-container:hover .logo-text {
+  opacity: 1;
+  max-height: 30px; /* dovolj za eno vrstico */
+}
